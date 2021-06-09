@@ -14,7 +14,7 @@ bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean compile/)
 
 }
 stage('Snyk'){
-snykSecurity failOnIssues: true, organisation: '10f085ff-6dfa-4802-906b-22f4e6e3fde4', snykInstallation: 'SnykInstall', snykTokenId: 'SnykAPI'
+snykSecurity failOnIssues: true, organisation: '10f085ff-6dfa-4802-906b-22f4e6e3fde4', snykInstallation: 'SnykSec', snykTokenId: 'SnykAPI_KP'
 
 
 }
