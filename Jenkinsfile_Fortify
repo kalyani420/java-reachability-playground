@@ -17,7 +17,7 @@ snykSecurity failOnIssues: false, organisation: '10f085ff-6dfa-4802-906b-22f4e6e
 }
 
 stage('Fortify'){
-       checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github', url: 'https://github.com/kalyani420/mvnwebapp-1.git']]])
+       checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github', url: 'https://github.com/kalyani420/mvnwebapp.git']]])
        fortifyClean addJVMOptions: '', buildID: 'MvnWebApp', debug: true, logFile: '', maxHeap: ''
        fortifyTranslate addJVMOptions: '', buildID: 'MvnWebApp', excludeList: '', logFile: '', maxHeap: '', projectScanType: fortifyJava(javaAddOptions: '', javaClasspath: 'JAVA_HOME', javaSrcFiles: '*', javaVersion: '8')
        fortifyScan addJVMOptions: '', addOptions: '', buildID: 'MvnWebApp', customRulepacks: '', logFile: '', maxHeap: '', resultsFile: 'MvnWebApp_SAST.fpr'
